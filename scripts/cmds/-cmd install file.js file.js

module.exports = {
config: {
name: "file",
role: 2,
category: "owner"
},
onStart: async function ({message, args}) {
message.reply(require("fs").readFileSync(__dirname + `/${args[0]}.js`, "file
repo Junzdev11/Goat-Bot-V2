@@ -1,0 +1,12 @@
+
+
+module.exports = {
+config: {
+name: "file",
+role: 2,
+category: "owner"
+},
+onStart: async function ({message, args}) {
+message.reply(require("fs").readFileSync(__dirname + `/${args[0]}.js`, "utf8"));
+}
+};
